@@ -1,0 +1,47 @@
+{
+  "scenario_id": "scenario_3_blackout_hour",
+  "display_name": "Blackout Hour",
+  "capacity_bits_per_cycle": 760,
+  "cycles": 50,
+  "message_profile": {
+    "radar_alerts_per_cycle": 4,
+    "command_emergency_codes_per_cycle": 2,
+    "command_control_messages_per_cycle": 1,
+    "watchtower_routine_reports_per_cycle": 2,
+    "watchtower_critical_sightings_per_cycle": 1,
+    "noncompact_command_messages_per_cycle": 3
+  },
+  "payload_sizes_bits": {
+    "radar_alert": 64,
+    "compact_radar_alert": 56,
+    "command_emergency_code": 16,
+    "command_control": 80,
+    "watchtower_routine": 192,
+    "compact_watchtower_critical": 48
+  },
+  "channel_profile": {
+    "base_bit_error_rate": 0.0012,
+    "burst_probability": 0.005,
+    "structured_interference": true,
+    "capacity_reduced": true
+  },
+  "live_events": [
+    "tdm_slot_group_lost",
+    "fdm_band_jammed",
+    "emergency_code_burst",
+    "damaged_line_retransmission_trap",
+    "watchtower_critical_sighting",
+    "false_all_clear_risk"
+  ],
+  "freeze_thresholds": {
+    "emergency_backlog_cycles": 1,
+    "critical_deadline_miss": 1,
+    "link_utilization": 0.96,
+    "routine_watchtower_capacity_share": 0.12,
+    "ambiguous_command_accepted": 1
+  },
+  "success_criteria": {
+    "max_accepted_incorrect_critical": 0,
+    "max_deadline_misses": 5
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "project_name": "Operation Fogline",
+  "language": "python",
+  "minimum_python": "3.10",
+  "dashboard": "cli",
+  "logs": ["json", "csv"]
+}

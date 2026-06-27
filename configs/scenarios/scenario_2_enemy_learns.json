@@ -1,0 +1,39 @@
+{
+  "scenario_id": "scenario_2_enemy_learns",
+  "display_name": "The Enemy Learns",
+  "capacity_bits_per_cycle": 1200,
+  "cycles": 45,
+  "message_profile": {
+    "radar_alerts_per_cycle": 4,
+    "watchtower_reports_per_cycle": 2,
+    "command_messages_per_cycle": 2
+  },
+  "payload_sizes_bits": {
+    "radar_alert": 64,
+    "watchtower_routine": 192,
+    "command_control": 80
+  },
+  "channel_profile": {
+    "base_bit_error_rate": 0.0008,
+    "burst_probability": 0.04,
+    "structured_interference": true
+  },
+  "live_events": [
+    "burst_jamming_pulse",
+    "slot_focused_interference",
+    "band_focused_interference",
+    "false_valid_frame",
+    "watchtower_repetition_flood"
+  ],
+  "freeze_thresholds": {
+    "accepted_incorrect_critical": 1,
+    "undetected_corruption_count": 1,
+    "link_utilization": 1.02,
+    "slot_error_ratio": 1.5,
+    "band_error_ratio": 1.5
+  },
+  "success_criteria": {
+    "max_accepted_incorrect_critical": 0,
+    "max_deadline_misses": 20
+  }
+}

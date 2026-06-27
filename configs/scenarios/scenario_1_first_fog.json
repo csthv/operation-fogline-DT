@@ -1,0 +1,38 @@
+{
+  "scenario_id": "scenario_1_first_fog",
+  "display_name": "The First Fog",
+  "capacity_bits_per_cycle": 1200,
+  "cycles": 40,
+  "message_profile": {
+    "radar_alerts_per_cycle": 3,
+    "watchtower_reports_per_cycle": 2,
+    "command_messages_per_cycle": 1
+  },
+  "payload_sizes_bits": {
+    "radar_alert": 64,
+    "watchtower_routine": 192,
+    "command_control": 80
+  },
+  "channel_profile": {
+    "base_bit_error_rate": 0.0005,
+    "degraded_bit_error_rate": 0.001,
+    "burst_probability": 0.0,
+    "structured_interference": false
+  },
+  "live_events": [
+    "damp_cable_spike",
+    "watchtower_long_report",
+    "radar_calibration_burst",
+    "generator_flicker"
+  ],
+  "freeze_thresholds": {
+    "detected_error_rate": 0.06,
+    "accepted_incorrect_count": 1,
+    "link_utilization": 0.9,
+    "watchtower_average_delay": 3
+  },
+  "success_criteria": {
+    "max_accepted_incorrect": 0,
+    "max_deadline_misses": 10
+  }
+}
